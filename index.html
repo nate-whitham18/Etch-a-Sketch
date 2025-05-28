@@ -4,33 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(16, 1fr);
-            grid-template-rows: repeat(16, 1fr);
-            width: 640px;
-            height: 640px;
-            gap: 2px;
-        }
-        .grid-item{
-            background-color: #ccc;
-            border: 1px solid #999;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="grid-container"></div>
-
-
-    <!-- JavaScript code to create the Etch-a-Sketch functionality -->
-     <script src="grid.js"></script>
+    <h1 class="main-title">Etch-A-Sketch</h1>
+    <div class="main-content">
+        <div class="side-controls">
+            <div class="selector-container">
+                <label for="grid-size">Grid Size:</label>
+                <input type="number" id="grid-size" min="2" max="100" value="16">
+                <button id="set-grid">Set Grid</button>
+                <button id="toggle-theme" style="margin-top:16px;">Toggle to Dark Mode</button>
+            </div>
+            <div class="color-controls">
+                <div class="color-selector-container">
+                    <span>Shading Color:</span>
+                    <div class="color-options">
+                        <button class="color-btn" data-color="#e74c3c" style="background:#e74c3c;" title="Red"></button>
+                        <button class="color-btn" data-color="#3498db" style="background:#3498db;" title="Blue"></button>
+                        <button class="color-btn" data-color="#27ae60" style="background:#27ae60;" title="Green"></button>
+                        <button class="color-btn" data-color="#f1c40f" style="background:#f1c40f;" title="Yellow"></button>
+                        <button class="color-btn" data-color="#9b59b6" style="background:#9b59b6;" title="Purple"></button>
+                        <button class="color-btn" data-color="#333" style="background:#333;" title="Black"></button>
+                        <button class="color-btn" data-color="#fff" style="background:#fff; border:1px solid #ccc;" title="White"></button>
+                        <button class="color-btn" data-color="rainbow" style="background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);" title="Rainbow"></button>
+                    </div>
+                    <button id="draw-mode-toggle" class="mode-toggle-btn" style="margin-top:20px;">Click & Drag Mode</button>
+                </div>
+            </div>
+            <div class="reset-container">
+                <button id="reset-grid">Reset Grid</button>
+            </div>
+        </div>
+        <div class="grid-container"></div>
+    </div>
+    <script src="grid.js"></script>
 </body>
 </html>
